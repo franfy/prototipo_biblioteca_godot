@@ -1,0 +1,66 @@
+[gd_scene load_steps=2 format=3 uid="uid://decds2gw0hep7"]
+
+[ext_resource type="Script" uid="uid://f5stxt728igc" path="res://wd_inicio_sesion.gd" id="1_oyixn"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oyixn")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 1149.0
+offset_bottom = 645.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+offset_left = 388.0
+offset_top = 203.0
+offset_right = 554.0
+offset_bottom = 304.0
+scale = Vector2(2, 2)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Usuario:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Panel/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Contrasena:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="Panel/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+placeholder_text = "Escribe aqui"
+alignment = 1
+
+[node name="LineEdit2" type="LineEdit" parent="Panel/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+placeholder_text = "Escribe aqui"
+alignment = 1
+
+[node name="Button" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Iniciar Sesion"
+
+[connection signal="pressed" from="Panel/VBoxContainer/Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,219 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7n8awivqg80a"]
+
+[ext_resource type="Script" uid="uid://btxuosoa7kt2o" path="res://gestor.gd" id="1_6sh7j"]
+[ext_resource type="Script" uid="uid://y7qhbmsgjnch" path="res://button.gd" id="2_fdjja"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6sh7j")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1150.0
+offset_bottom = 648.0
+
+[node name="TabContainer" type="TabContainer" parent="Panel"]
+layout_mode = 0
+offset_right = 1150.0
+offset_bottom = 78.0
+current_tab = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="MenuButton" type="MenuButton" parent="Panel/TabContainer/HBoxContainer"]
+layout_mode = 2
+text = "Subir"
+item_count = 3
+popup/item_0/text = "Subir Computadora"
+popup/item_0/id = 0
+popup/item_1/text = "Subir Libro"
+popup/item_1/id = 1
+popup/item_2/text = "Subir otro objeto"
+popup/item_2/id = 2
+
+[node name="HSeparator" type="HSeparator" parent="Panel/TabContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="MenuButton2" type="MenuButton" parent="Panel/TabContainer/HBoxContainer"]
+layout_mode = 2
+text = "Bajar"
+item_count = 3
+popup/item_0/text = "Bajar Computadora"
+popup/item_0/id = 0
+popup/item_1/text = "Bajar Libro"
+popup/item_1/id = 1
+popup/item_2/text = "Bajar otro objeto"
+popup/item_2/id = 2
+
+[node name="HSeparator2" type="HSeparator" parent="Panel/TabContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="MenuButton3" type="MenuButton" parent="Panel/TabContainer/HBoxContainer"]
+layout_mode = 2
+text = "Listar"
+item_count = 3
+popup/item_0/text = "Listar Computadora"
+popup/item_0/id = 0
+popup/item_1/text = "Listar Libros"
+popup/item_1/id = 1
+popup/item_2/text = "Listar todo (por fecha)"
+popup/item_2/id = 2
+
+[node name="HSeparator3" type="HSeparator" parent="Panel/TabContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="MenuButton4" type="MenuButton" parent="Panel/TabContainer/HBoxContainer"]
+layout_mode = 2
+text = "Otros"
+item_count = 3
+popup/item_0/text = "Anadir Objeto"
+popup/item_0/id = 0
+popup/item_1/text = "Borrar Objeto"
+popup/item_1/id = 1
+popup/item_2/text = "Configuracion"
+popup/item_2/id = 2
+
+[node name="Config" type="Window" parent="."]
+title = "Configuracion"
+initial_position = 3
+size = Vector2i(1100, 400)
+current_screen = 0
+visible = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Config"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Config/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Config/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Tema:"
+horizontal_alignment = 2
+
+[node name="Label2" type="Label" parent="Config/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quieres un cafe?:"
+horizontal_alignment = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Config/HBoxContainer"]
+layout_mode = 2
+
+[node name="OptionButton" type="OptionButton" parent="Config/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+item_count = 2
+popup/item_0/text = "Claro"
+popup/item_0/id = 0
+popup/item_1/text = "Oscuro"
+popup/item_1/id = 1
+
+[node name="OptionButton2" type="OptionButton" parent="Config/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+item_count = 2
+popup/item_0/text = "Si"
+popup/item_0/id = 0
+popup/item_1/text = "No"
+popup/item_1/id = 1
+
+[node name="Label" type="Label" parent="Config"]
+offset_left = 184.0
+offset_top = 69.0
+offset_right = 224.0
+offset_bottom = 92.0
+
+[node name="Subir" type="Window" parent="."]
+title = "Subir"
+initial_position = 3
+size = Vector2i(1100, 400)
+current_screen = 0
+visible = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Subir"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Subir/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Subir/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Subir/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Nombre:"
+horizontal_alignment = 2
+
+[node name="Label2" type="Label" parent="Subir/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "id:"
+horizontal_alignment = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Subir/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="Subir/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="LineEdit2" type="LineEdit" parent="Subir/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Subir/VBoxContainer"]
+layout_mode = 2
+text = "Subir libro"
+script = ExtResource("2_fdjja")
+
+[node name="Label" type="Label" parent="Subir/VBoxContainer"]
+layout_mode = 2
+
+[node name="bajar" type="Window" parent="."]
+auto_translate_mode = 1
+title = "bajar"
+initial_position = 3
+size = Vector2i(1100, 400)
+current_screen = 0
+visible = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="bajar"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="bajar/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="bajar/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="bajar/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "id:"
+horizontal_alignment = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="bajar/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="LineEdit2" type="LineEdit" parent="bajar/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="bajar/VBoxContainer"]
+layout_mode = 2
+text = "bajar libro"
+script = ExtResource("2_fdjja")
+
+[node name="Label" type="Label" parent="bajar/VBoxContainer"]
+layout_mode = 2
+
+[connection signal="about_to_popup" from="Panel/TabContainer/HBoxContainer/MenuButton" to="." method="_on_button_about_to_popup"]
+[connection signal="close_requested" from="Config" to="." method="_on_config_close_requested"]
+[connection signal="item_selected" from="Config/HBoxContainer/VBoxContainer2/OptionButton2" to="." method="_on_option_button_2_item_selected"]
+[connection signal="close_requested" from="Subir" to="." method="_on_subir_close_requested"]
+[connection signal="pressed" from="Subir/VBoxContainer/Button" to="Subir/VBoxContainer/Button" method="_on_pressed"]
+[connection signal="close_requested" from="bajar" to="." method="_on_bajar_close_requested"]
+[connection signal="pressed" from="bajar/VBoxContainer/Button" to="bajar/VBoxContainer/Button" method="_on_pressed"]
